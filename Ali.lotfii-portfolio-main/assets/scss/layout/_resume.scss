@@ -1,0 +1,180 @@
+@use "../abstracts/" as *;
+.resume {
+    margin: 5rem 0;
+    .container {
+        border-bottom: 0.1rem solid black;
+        .nav_list {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            justify-items: center;
+            color: #fff;
+            background-color: #191b1e;
+            font-size: 2rem;
+            .nav_item {
+                padding: 2rem;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                color: #ababab;
+                &:hover {
+                    background-color: #141618;
+                }
+            }
+            .active {
+                border: 1px solid $red-color;
+                width: 100%;
+                text-align: center;
+                color: #fff;
+                cursor: pointer;
+            }
+        }
+        .row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            justify-items: center;
+            gap: 2rem;
+            margin: 5rem 0 6rem 0;
+            .resume_inner {
+                border-left: 0.4rem solid #17191c;
+                width: 100%;
+                .card {
+                    @include flex(center, center);
+                    width: 100%;
+                    transition: 0.3s;
+                    margin-top: 2.5rem;
+                    .line {
+                        position: relative;
+                        width: 4rem;
+                        height: 0.5rem;
+                        background-color: #16171b;
+                        span {
+                            position: absolute;
+                            height: 2rem;
+                            width: 2rem;
+                            top: -0.8rem;
+                            border-radius: 50%;
+                            background-color: #212428;
+                            border: 0.3rem solid black;
+                            left: -1.2rem;
+                        }
+                    }
+                    &:hover > .line span {
+                        background-color: $red-color;
+                    }
+                }
+                .card_content {
+                    padding: 2rem 2.5rem;
+                    background-color: #1f2125;
+                    box-shadow: 0 0.5rem 1.5rem 0 rgba(0, 0, 0, 0.35);
+                    color: #fff;
+                    width: 100%;
+                    transition: 0.3s;
+                    .flex {
+                        @include flex(space-between, center);
+                        h2 {
+                            font-size: 2rem;
+                        }
+                        h3 {
+                            font-size: 1.5rem;
+                            font-weight: 100;
+                        }
+                    }
+                    .button2 {
+                        margin-top: 1.5rem;
+                        text-align: center;
+                        cursor: pointer;
+                        padding: 1rem 2rem;
+                        box-shadow: 0 0.5rem 1.5rem 0 rgba(0, 0, 0, 0.35);
+                        border: 0.1rem solid $red-color;
+                        span {
+                            font-size: 1.3rem;
+                        }
+                        &:hover {
+                            padding: 1rem 2rem;
+                            a {
+                                color: $red-color;
+                            }
+                        }
+                    }
+                    .button1 {
+                        text-align: center;
+                        cursor: pointer;
+                        padding: 1rem 2.1rem;
+                        box-shadow: 0 0.5rem 1.5rem 0 rgba(0, 0, 0, 0.35);
+                        span {
+                            font-size: 1.3rem;
+                            a {
+                                color: $red-color;
+                            }
+                        }
+                        &:hover {
+                            border: 0.1rem solid $red-color;
+                            padding: 1rem 2rem;
+                        }
+                    }
+                    ul {
+                        margin-top: 1.5rem;
+                        li {
+                            list-style-type: disc;
+                            padding-top: 1rem;
+                            font-size: 1.4rem;
+                            &::marker {
+                                color: rgba(255, 1, 79, 0.6);
+                            }
+                        }
+                    }
+                    &:hover {
+                        background-color: #1a1d20;
+                    }
+                }
+            }
+        }
+    }
+}
+//  responsive
+@media (max-width: 1536px) {
+    .resume {
+        .container {
+            .button2 {
+                display: none;
+            }
+            .button1 {
+                display: block;
+            }
+        }
+    }
+}
+@media (max-width: 991px) {
+    .resume {
+        .container {
+            .nav_list {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            .row {
+                flex-direction: column;
+                @include flex(center, center);
+            }
+            .button2 {
+                display: none;
+            }
+            .button1 {
+                display: block;
+            }
+        }
+    }
+}
+@media (max-width: 768px) {
+    .resume {
+        .container {
+            .nav_list {
+                grid-template-columns: 1fr;
+            }
+            .button1 {
+                display: none;
+            }
+            .button2 {
+                display: block;
+            }
+        }
+    }
+}
