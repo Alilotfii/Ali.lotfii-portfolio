@@ -1,0 +1,94 @@
+@use "../abstracts/" as *;
+.testimonial {
+    .container {
+        border-bottom: 0.1rem solid black;
+        padding-bottom: 4rem;
+        .row {
+            display: grid;
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+            gap: 4rem;
+            .col_image {
+                box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+                grid-column: span 2 / span 2;
+                padding: 3rem;
+                border-radius: 0.5rem;
+                background-color: #1e2125;
+                img {
+                    border-radius: 0.5rem;
+                    padding-bottom: 1.5rem;
+                    height: 28rem;
+                }
+                .text_subject_team {
+                    color: $red-color;
+                    font-size: 1.3rem;
+                    font-weight: 100;
+                }
+                .name_title {
+                    color: $blue-color;
+                    font-size: 2.5rem;
+                }
+                .job_title {
+                    font-size: 1.3rem;
+                    color: $blue-color;
+                }
+            }
+            .col_content {
+                grid-column: span 4 / span 4;
+                .svg {
+                    img {
+                        width: 13rem;
+                        height: auto;
+                    }
+                }
+                .title {
+                    padding: 3rem 2rem;
+                    text-align: center;
+                    color: #fff;
+                    background-color: #1e2125;
+                    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+                    .title_t {
+                        line-height: 3rem;
+                        font-size: 2.2rem;
+                        color: $blue-color;
+                    }
+                    .text {
+                        padding: 0.5rem;
+                        color: #e1e1e1;
+                        font-size: 1.4rem;
+                    }
+                    .icons {
+                        font-size: 1.5rem;
+                        gap: 2rem;
+                        border-bottom: 0.1rem solid black;
+                        padding-bottom: 2rem;
+                        i {
+                            color: gold;
+                        }
+                    }
+                    .text_info {
+                        padding-top: 2rem;
+                        font-size: 1.4rem;
+                        line-height: 2.5rem;
+                        color: $blue-color;
+                    }
+                }
+            }
+        }
+    }
+}
+//  responsive
+@media (max-width: 991px) {
+    .testimonial {
+        .container {
+            .row {
+                display: block;
+                .col_content {
+                    margin-top: 5rem;
+                    .svg {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

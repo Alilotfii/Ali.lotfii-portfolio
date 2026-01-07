@@ -1,0 +1,44 @@
+@use "../abstracts/" as *;
+.features {
+    margin-top: 5rem;
+    color: #fff;
+    .container {
+        border-bottom: 0.1rem solid black;
+        padding-bottom: 4rem;
+        .row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+            .col {
+                padding: 2.5rem;
+                background-color: transparent;
+                box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+
+                .run {
+                    display: grid;
+                    grid-template-columns: 100px, 1fr;
+                }
+                .svg-class {
+                    font-size: 5rem;
+                    svg {
+                        color: $red-color;
+                    }
+                }
+                .title {
+                    padding-bottom: 1rem;
+                    font-size: 2rem;
+                    color: $blue-color;
+                }
+                .text {
+                    font-size: 1.3rem;
+                    line-height: 2.5rem;
+                    color: $text-color;
+                }
+                &:hover {
+                    background: linear-gradient(0deg, $black-color, black 80%);
+                }
+            }
+        }
+    }
+}
